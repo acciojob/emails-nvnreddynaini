@@ -37,16 +37,16 @@ public class Workspace extends Gmail{
         calendar.sort(new CustomComparator());
 
 
-        for (int i = 0; i < calendar.size(); i++)
+        for (int i = 1; i < calendar.size(); i++)
         {
-//            LocalTime prevEnd = calendar.get(i-1).getEndTime();
-//
-//            LocalTime currStart = calendar.get(i).getStartTime();
-//            if(prevEnd.compareTo(currStart) > 0){
-//                count++;
-//
-//            }
-            System.out.println(calendar.get(i).getStartTime()+" "+calendar.get(i).getEndTime());
+            LocalTime prevEnd = calendar.get(i-1).getEndTime();
+
+            LocalTime currStart = calendar.get(i).getStartTime();
+            if(prevEnd.compareTo(currStart) > 0){
+                count++;
+
+            }
+            //System.out.println(calendar.get(i).getStartTime()+" "+calendar.get(i).getEndTime());
         }
 
         return count;
