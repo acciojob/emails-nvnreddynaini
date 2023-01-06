@@ -29,7 +29,7 @@ public class Workspace extends Gmail{
             if(val == 0){
                 return (t1.getStartTime().compareTo(t2.getStartTime()))>=0?1:0;
             }
-            return (t1.getEndTime().compareTo(t2.getEndTime()))>=0?1:0;
+            return (t1.getEndTime().compareTo(t2.getEndTime()))>0?1:0;
         }
     }
     public int findMaxMeetings(){
