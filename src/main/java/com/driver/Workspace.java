@@ -31,7 +31,18 @@ public class Workspace extends Gmail{
             }else{
                 return (t1.getEndTime().compareTo(t2.getEndTime()))>0?1:-1;
             }
-            //return (t1.getEndTime().compareTo(t2.getEndTime()))>0?1:-1;
+//            if(t1.getEndTime().compareTo(t2.getEndTime())>0){
+//                return 1;
+//            }else if(t1.getEndTime().compareTo(t2.getEndTime())<0){
+//                return -1;
+//            }else if(t1.getEndTime().compareTo(t2.getEndTime())==0){
+//                if(t1.getStartTime().compareTo(t2.getStartTime())>0){
+//                    return 1;
+//                }else if(t1.getStartTime().compareTo(t2.getStartTime())<0){
+//                    return -1;
+//                }
+//            }
+//            return 0;
         }
     }
     public int findMaxMeetings(){
@@ -49,7 +60,7 @@ public class Workspace extends Gmail{
             //LocalTime prevEnd = calendar.get(i-1).getEndTime();
 
             LocalTime currStart = calendar.get(i).getStartTime();
-            if(prevEnd.compareTo(currStart) > 0){
+            if(prevEnd.compareTo(currStart) < 0){
                 count++;
                 prevEnd = calendar.get(i).getEndTime();
 
