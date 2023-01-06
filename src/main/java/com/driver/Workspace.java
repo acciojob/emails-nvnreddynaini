@@ -27,9 +27,9 @@ public class Workspace extends Gmail{
         public int compare(Meeting t1, Meeting t2) {
             int val = t1.getEndTime().compareTo(t2.getEndTime());
             if(val == 0){
-                return (t1.getStartTime().compareTo(t2.getStartTime()))>=0?1:0;
+                return (t1.getStartTime().compareTo(t2.getStartTime()))>0?1:-1;
             }
-            return (t1.getEndTime().compareTo(t2.getEndTime()))>0?1:0;
+            return (t1.getEndTime().compareTo(t2.getEndTime()))>0?1:-1;
         }
     }
     public int findMaxMeetings(){
